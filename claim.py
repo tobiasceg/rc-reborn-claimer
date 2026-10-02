@@ -68,8 +68,13 @@ def main():
     args = parser.parse_args()
 
     with sync_playwright() as p:
+        # Real Chrome without the "automated" flag, so Discord login isn't blocked
         browser = p.chromium.launch_persistent_context(
-            PROFILE_DIR, headless=args.headless and not args.login
+            PROFILE_DIR,
+            channel="chrome",
+            headless=args.headless and not args.login,
+            ignore_default_args=["--enable-automation"],
+            args=["--disable-blink-features=AutomationControlled"],
         )
         page = browser.pages[0] if browser.pages else browser.new_page()
 
