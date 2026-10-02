@@ -16,7 +16,7 @@ LINKS_FILE = HERE / "links.txt"
 DONE_FILE = HERE / "claimed.txt"
 PROFILE_DIR = HERE / "browser-profile"  # keeps your login between runs
 
-LINK_RE = re.compile(r"https://rc-reborn\.uk/s/[A-Za-z0-9]+")
+LINK_RE = re.compile(r"https://rc-reborn\.uk/s/[A-Za-z0-9_-]+")
 CLAIM_BTN = "button.rc-btn.green:has-text('Claim')"
 
 
