@@ -1,0 +1,5 @@
+.venv/
+browser-profile/
+links.txt
+claimed.txt
+__pycache__/
